@@ -40,12 +40,13 @@ request.data = {
 }
 
 json(response) = {
-  'crn': [seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date]
+  'crn': [[seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date], ]
 }
 ```
 
 Limit: 200 CRN#s  
 seats and waitlist capacity, actual, and remaining are integers  
 from_timestamp and to_timestamp should be of the form ```str(datetime.datetime)``` of a timezone-aware datetime  
+the list is a 2D array of all entries for that section that were scraped between from_timestamp and to_timestamp  
 get_date is of the form ```str(datetime.datetime)```  
 
