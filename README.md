@@ -19,7 +19,8 @@ request.data = {
 }
 
 json(response) = {
-  'crn': [seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date]
+  '<crn>': [seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date],
+  '<crn>': ...
 }
 ```
 
@@ -40,7 +41,8 @@ request.data = {
 }
 
 json(response) = {
-  'crn': [[seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date], ]
+  '<crn>': [[seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date], ],
+  '<crn>': ...
 }
 ```
 
