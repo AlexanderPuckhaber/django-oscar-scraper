@@ -22,14 +22,15 @@ json(response) = {
   'crn': [seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date]
 }
 ```
-Limit: 200 CRN#s
-seats and waitlist capacity, actual, and remaining are integers
-get_date is of the form ```str(datetime.datetime)```
-If no entry is found for a crn, the data for that crn is ```'crn': None```
 
-POST:
-http://<base_url>/<semester_str>/get_capacities_history_by_crn
-(eg. http://myawesomeserver.biz/202102/get_capacities_history_by_crn)
+Limit: 200 CRN#s  
+seats and waitlist capacity, actual, and remaining are integers  
+get_date is of the form ```str(datetime.datetime)```  
+If no entry is found for a crn, the data for that crn is ```'crn': None```  
+
+POST:  
+http://<base_url>/<semester_str>/get_capacities_history_by_crn  
+(eg. http://myawesomeserver.biz/202102/get_capacities_history_by_crn)  
 
 ```
 request.data = {
@@ -42,7 +43,9 @@ json(response) = {
   'crn': [seats_capacity, seats_actual, seats_remaining, seats_waitlist_capacity, seats_waitlist_actual, seats_waitlist_remaining, get_date]
 }
 ```
-Limit: 200 CRN#s
-seats and waitlist capacity, actual, and remaining are integers
-from_timestamp and to_timestamp should be of the form ```str(datetime.datetime)``` of a timezone-aware datetime
-get_date is of the form ```str(datetime.datetime)```
+
+Limit: 200 CRN#s  
+seats and waitlist capacity, actual, and remaining are integers  
+from_timestamp and to_timestamp should be of the form ```str(datetime.datetime)``` of a timezone-aware datetime  
+get_date is of the form ```str(datetime.datetime)```  
+
