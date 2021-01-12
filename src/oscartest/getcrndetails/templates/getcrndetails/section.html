@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Section View</title>
+
+        <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+
+
+    {% if section %}
+        <p><a href="/{{ semester }}/">Semester: {{ semester.semester_str }} ({{ semester.semester_str_readable }})</a></p>
+
+        <p><a href="/{{ semester.semester_str }}/{{section.course.course_str_as_list.0}}/{{section.course.course_str_as_list.1}}/">Course: {{ section.course.course_str }}</a></p>
+
+        <p>Section: {{ section.code }} CRN: {{ section.crn }}</p>
+
+        {% if latest_section_capacities %}
+            <table>
+                <tr>
+                    <th>Capacity</th>
+                    <th>Actual</th>
+                    <th>Remaining</th>
+                    <th>Waitlist Capacity</th>
+                    <th>Waitlist Actual</th>
+                    <th>Waitlist Remaining</th>
+                    <th>DateTime of Web Scrape</th>
+                </tr>
+                {% for section_capacities in latest_section_capacities %}
+                    <tr>
+                        <td>{{ section_capacities.seats_capacity }}</td>
+                        <td>{{ section_capacities.seats_actual }}</td>
+                        <td>{{ section_capacities.seats_remaining }}</td>
+                        <td>{{ section_capacities.seats_waitlist_capacity }}</td>
+                        <td>{{ section_capacities.seats_waitlist_actual }}</td>
+                        <td>{{ section_capacities.seats_waitlist_remaining }}</td>
+                        <td>{{ section_capacities.get_date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No section capacities.</p>
+        {% endif %}
+    {% else %}
+        <p>No section found</p>
+    {% endif %}
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ semester.semester_str_readable }}</title>
+    </head>
+    <body>
+        <p><a href="{% url 'index' %}">Home</a></p>
+
+        {% if semester %}
+            <p>Semester: {{ semester.semester_str }} ({{ semester.semester_str_readable }})</p>
+
+            <p>Search by course name</p>
+            <form action="course_search" method="get">
+              <input name="q" type="text" placeholder="CS 1301">
+            </form>
+
+            <p>Search by CRN#</p>
+            <form action="crn_search" method="get">
+              <input name="q" type="text" placeholder="42069">
+            </form>
+        {% else %}
+            <p>Semester not found</p>
+        {% endif %}
+
+
+    </body>
+</html>

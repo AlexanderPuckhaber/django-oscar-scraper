@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course.course_str }}</title>
+</head>
+<body>
+    <p><a href="../..">Search again</a></p>
+
+    <p>Course: {{ course.course_str }}</p>
+
+    <p>Sections: </p>
+
+    {% for section in sections %}
+        <li>
+            <a href="{{ section.crn }}">{{ section.crn }} {{ section.code }}</a>
+        </li>
+    {% endfor %}
+
+</body>
+</html>
