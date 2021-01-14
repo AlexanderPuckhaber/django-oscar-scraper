@@ -1,4 +1,4 @@
 .idea/
 /venv
 .env
-/src/oscartest/static/
+#/src/oscartest/static/
